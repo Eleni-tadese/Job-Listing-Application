@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+# Job Listing Application
+
+A responsive job listing web app built with Next.js, React, TypeScript, and Tailwind CSS. Users can browse open positions on a dashboard and click into any listing to view full details.
+
+## Features
+
+- **Opportunities Dashboard** — browse all job listings as cards, showing company, location, a description preview, and category tags
+- **Sort dropdown** — reorder listings by "Most relevant," "Newest," or "Title A–Z"
+- **Job Details Page** — full description, responsibilities, ideal candidate profile, and a sidebar with posting dates, categories, and required skills
+- **Back navigation** — return from a job's detail page to the dashboard
+- **Avatar images** — each listing displays a company avatar
+- Fully styled with Tailwind CSS, matching the provided Figma design
+
+## Tech Stack
+
+- [Next.js](https://nextjs.org/) 16 (App Router)
+- React + TypeScript
+- Tailwind CSS
+- [lucide-react](https://lucide.dev/) for icons
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Pages
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Opportunities Dashboard (`/`)
 
-## Learn More
+Lists all job openings as cards. Each card shows the company avatar, job title, company name, location, a short description, and tags for job type and category. Includes a sort dropdown in the top right.
 
-To learn more about Next.js, take a look at the following resources:
+![Opportunities Dashboard](Screenshot/Screenshot1.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Job Details Page (`/jobs/[id]`)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Clicking any job card navigates here. Shows the full job description, a checklist of responsibilities, the ideal candidate profile, and onboarding details. The sidebar lists key dates, categories, and required skills.
 
-## Deploy on Vercel
+![Job Details Page](Screenshot/Screenshot2.png)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+app/
+├── components/
+│   ├── JobCard.tsx        # Individual job card used on the dashboard
+│   └── SortDropdown.tsx   # Client-side sort control for the dashboard
+├── data/
+│   └── jobs.ts            # Dummy job data
+├── types/
+│   └── job.ts             # Job TypeScript interface
+├── jobs/
+│   └── [id]/
+│       └── page.tsx       # Dynamic job details page
+├── layout.tsx
+└── page.tsx                # Dashboard (Opportunities page)
+```
+
+## Notes
+
+- Job data is currently static dummy data (`app/data/jobs.ts`), matching the format provided in the task brief.
+- Avatar images are sourced dynamically per job.
+```
