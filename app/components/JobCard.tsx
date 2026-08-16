@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { Job } from "../types/job";
 
 interface JobCardProps {
@@ -17,12 +17,12 @@ export default function JobCard({ job }: JobCardProps) {
     <Link href={`/jobs/${job.id}`}>
       <div className="bg-white rounded-2xl shadow-sm hover:shadow-md transition-all p-6 flex gap-5 border border-gray-100 cursor-pointer">
         <Image
-  src={job.avatar}
-  alt={job.company}
-  width={64}
-  height={64}
-  className="rounded-full h-16 w-16 object-cover flex-shrink-0"
-/>
+          src={job.avatar}
+          alt={job.company}
+          width={64}
+          height={64}
+          className="rounded-full h-16 w-16 object-cover flex-shrink-0"
+        />
 
         <div className="flex-1">
           <h2 className="text-lg font-semibold text-gray-900">

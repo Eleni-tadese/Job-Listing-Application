@@ -35,7 +35,6 @@ export default async function JobDetailsPage({
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Main content */}
         <div className="lg:col-span-2 bg-white border border-blue-200 rounded-xl p-8 space-y-8">
           <section>
             <h2 className="text-xl font-bold mb-2">Description</h2>
@@ -70,7 +69,6 @@ export default async function JobDetailsPage({
           </section>
         </div>
 
-        {/* Sidebar */}
         <aside className="space-y-6">
           <div>
             <h3 className="text-lg font-bold mb-3">About</h3>
@@ -93,10 +91,7 @@ export default async function JobDetailsPage({
             <h3 className="text-lg font-bold mb-3">Categories</h3>
             <div className="flex gap-2 flex-wrap">
               {job.categories.map((c) => (
-                <span
-                  key={c}
-                  className="bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-sm"
-                >
+                <span key={c} className="bg-orange-50 text-orange-600 px-3 py-1 rounded-full text-sm">
                   {c}
                 </span>
               ))}
@@ -107,10 +102,7 @@ export default async function JobDetailsPage({
             <h3 className="text-lg font-bold mb-3">Required Skills</h3>
             <div className="flex gap-2 flex-wrap">
               {job.requiredSkills.map((s) => (
-                <span
-                  key={s}
-                  className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm"
-                >
+                <span key={s} className="bg-blue-50 text-blue-600 px-3 py-1 rounded-full text-sm">
                   {s}
                 </span>
               ))}
