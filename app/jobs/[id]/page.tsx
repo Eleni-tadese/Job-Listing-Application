@@ -1,6 +1,7 @@
+import Link from "next/link";
 import { jobs } from "../../data/jobs";
 import { notFound } from "next/navigation";
-import { Clock, Flame, MapPin, Calendar, CheckCircle2 } from "lucide-react";
+import { Clock, Flame, MapPin, Calendar, CheckCircle2, ArrowLeft } from "lucide-react";
 
 export default async function JobDetailsPage({
   params,
@@ -21,9 +22,17 @@ export default async function JobDetailsPage({
 
   return (
     <main className="max-w-6xl mx-auto px-6 py-10">
-      <p className="text-gray-400 text-sm mb-6">
-        Applicant Dashboard / Description
-      </p>
+      <div className="flex items-center gap-3 mb-6">
+        <Link
+          href="/"
+          className="flex items-center gap-1 text-gray-500 hover:text-gray-800 transition-colors text-sm"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back
+        </Link>
+        <span className="text-gray-300">/</span>
+        <p className="text-gray-400 text-sm">Applicant Dashboard / Description</p>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         {/* Main content */}
