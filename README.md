@@ -57,6 +57,8 @@ Clicking any job card navigates here, fetching that specific job by ID from the 
 ![Job Details Page](Screenshot/job-details.png)
 
 ## Project Structure
+
+```
 app/
 ├── components/
 │ ├── JobCard.tsx # Individual job card used on the dashboard
@@ -70,7 +72,7 @@ app/
 │ └── page.tsx # Dynamic job details page (fetches by ID)
 ├── layout.tsx
 └── page.tsx # Dashboard (fetches and displays opportunities)
-
+```
 
 ## Notes
 
