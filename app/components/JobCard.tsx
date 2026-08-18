@@ -8,6 +8,7 @@ interface JobCardProps {
 
 const typeStyles: Record<string, string> = {
   "In Person": "bg-green-100 text-green-700",
+  Virtual: "bg-blue-100 text-blue-700",
   Remote: "bg-blue-100 text-blue-700",
   Hybrid: "bg-purple-100 text-purple-700",
 };

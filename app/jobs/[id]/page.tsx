@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { jobs } from "../../data/jobs";
 import { notFound } from "next/navigation";
 import { Clock, Flame, MapPin, Calendar, CheckCircle2, ArrowLeft } from "lucide-react";
+import { getOpportunityById } from "../../lib/api";
 
 export default async function JobDetailsPage({
   params,
@@ -9,7 +9,9 @@ export default async function JobDetailsPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const job = jobs.find((j) => j.id === id);
+
+  // Fetch the specific job from the API instead of local dummy data.
+  const job = await getOpportunityById(id);
   if (!job) return notFound();
 
   const aboutItems = [
